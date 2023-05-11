@@ -4,7 +4,8 @@
   "description": "About news letter sign up",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build":"npm install"
   },
   "author": "Adasrh raj yadav",
   "license": "ISC",
