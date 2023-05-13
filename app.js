@@ -1,10 +1,13 @@
+require('dotenv').config();
 
-
+const cors=require("cors");
 const express=require("express"); 
 const body_parser=require("body-parser");
 //const request=require("request");
+//const apikey=process.env.MAILCHIMP_API_KEY;
 const https=require("https");
 const app=express();
+app.use(cors());
 app.use(express.static("public"));
 app.use(body_parser.urlencoded({extended:true}));    
 app.get("/",function(req,res){
@@ -36,7 +39,7 @@ const jsonData= JSON.stringify(data);
 const url="https://us8.api.mailchimp.com/3.0/lists/2f488bc798";
 const options={
     method:"POST",
-    auth:"shubham:ed40f64217cb7b839611a42813f9248b-us8"
+    auth:`anystring:${process.env.MAILCHIMP_API_KEY}`
 }
 const request=https.request(url,options,function(response){
     if(response.statusCode===200){
