@@ -4,7 +4,7 @@ const cors=require("cors");
 const express=require("express"); 
 const body_parser=require("body-parser");
 //const request=require("request");
-//const apikey=process.env.MAILCHIMP_API_KEY;
+
 const https=require("https");
 const app=express();
 app.use(cors());
