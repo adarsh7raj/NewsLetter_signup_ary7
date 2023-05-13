@@ -20,12 +20,12 @@ app.post("/",function(req,res){
     console.log(fname,lname,email);
     const data={
         members:[
-        {
+        {  
             email_address:email,
             status:"subscribed",
             merge_fields: {
                 FNAME: fname,
-                LASTNAME: lname
+                LNAME: lname
             }
             
         }
@@ -35,7 +35,7 @@ const jsonData= JSON.stringify(data);
 const url="https://us8.api.mailchimp.com/3.0/lists/2f488bc798";
 const options={
     method:"POST",
-    auth:"ADARSH:3187e0e04ef7a933133a0426b3b20286-us8"
+    auth:"adarsh:90eb89bd8b1ffb99347ab54437a04e4d-us8"
 }
 const request=https.request(url,options,function(response){
     if(response.statusCode===200){
@@ -58,6 +58,7 @@ app.post("/failure",function(req,res){
 });
 
 
-app.listen(3000,function(){
+app.listen(process.env.PORT || 3000,function(){
     console.log("server is up and running");
 });
+    
